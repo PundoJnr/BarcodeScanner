@@ -13,39 +13,42 @@
         android:id="@+id/buttonScanCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="149dp"
-        android:layout_marginEnd="135dp"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
         android:fontFamily="monospace"
+        android:gravity="center"
         android:onClick="scanCode"
         android:text="Scan"
-        android:gravity="center"
         android:textSize="30sp"
         tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonScanCode"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="165dp"
-        android:fontFamily="monospace"
-        android:text="Barcode Scanner"
-        android:textColor="#000"
-        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp"
         android:textColor="#000"
         android:visibility="visible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
+        android:src="@drawable/Capture2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/splash" />
 
 
 </RelativeLayout>
