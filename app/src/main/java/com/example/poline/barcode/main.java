@@ -60,7 +60,7 @@ public class main extends AppCompatActivity {
            String resultCode = result.getText().toString();
             //Toast.makeText(main.this, "http://nyeri.leja.co.ke/success.php?ref=" +resultCode, Toast.LENGTH_LONG);
             scannerView.stopCamera();
-            String finalText = "http://dues.co.ke/confirm.php?txtid_num=" +resultCode;
+            String finalText =" <a href='http://dues.co.ke/confirm.php?txtid_num=" +resultCode;
            // textView2.setText("http://nyeri.leja.co.ke/success.php?ref=" +resultCode);
             String text = " <a href='http://dues.co.ke/confirm.php?txtid_num=" + resultCode +" '> View Profile</a>";
 
