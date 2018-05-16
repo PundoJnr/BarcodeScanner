@@ -1,6 +1,7 @@
 package com.example.poline.barcode;
 
 
+        import android.app.Dialog;
         import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -22,7 +23,7 @@ public class main extends AppCompatActivity {
 
     private ZXingScannerView scannerView;
     private Button button;
-
+    Dialog myDialog;
     public  static TextView textView2;
 
 
@@ -30,9 +31,24 @@ public class main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_main);
-
+    myDialog = new Dialog(this);
     textView2 = (TextView) findViewById(R.id.textView2);
     }
+    public void showPopUp(View v){
+        TextView txtclose;
+
+        myDialog.setContentView(R.layout.infopopup);
+        txtclose = (TextView) findViewById(R.id.txtclose);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.show();
+    }
+
     public void scanCode(View view){
         scannerView = new ZXingScannerView(this);
         scannerView.setResultHandler(new ZXingScannerResultHandler());
