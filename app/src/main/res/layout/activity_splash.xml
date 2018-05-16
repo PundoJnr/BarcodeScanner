@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dcdcdc"
+    android:background="#fff"
     tools:context="com.example.poline.barcode.splash">
 
     <ImageView
@@ -16,13 +16,18 @@
         android:src="@drawable/nyeri"
         android:id="@+id/imageView3" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        android:src="@drawable/splash" />
+        android:layout_marginTop="77dp"
+        android:fontFamily="serif"
+        android:text="DATACODE"
+        android:textColor="#000"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
 
 
 </RelativeLayout>
