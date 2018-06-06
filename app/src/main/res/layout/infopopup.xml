@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="350sp"
-    android:layout_height="475sp"
+    android:layout_width="400sp"
+    android:layout_height="500sp"
     android:background="#dcdcdc"
     android:padding="5sp"
     android:layout_gravity="center">
@@ -16,18 +16,17 @@
         android:textColor="#000"
         android:gravity="center"
         android:background="@drawable/circlebackgrounnd"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <WebView
-        android:id ="@+id/result"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
-
-    </WebView>
-</LinearLayout>
+        <WebView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+    </LinearLayout>
 
 
 </LinearLayout>
