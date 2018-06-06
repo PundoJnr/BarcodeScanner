@@ -8,8 +8,12 @@ package com.example.poline.barcode;
         import android.text.Html;
         import android.text.method.LinkMovementMethod;
         import android.util.Log;
+        import android.view.Gravity;
         import android.view.View;
+        import android.webkit.WebView;
         import android.widget.Button;
+        import android.widget.PopupWindow;
+        import android.widget.RelativeLayout;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -25,8 +29,9 @@ public class main extends AppCompatActivity {
     private Button button;
     Dialog myDialog;
     public  static TextView textView2;
-
-
+    public String resultCode = null;
+    PopupWindow mpopup;
+    public String finalText = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +66,27 @@ public class main extends AppCompatActivity {
         super.onPause();
         scannerView.stopCamera();
     }
+
+    public void view(View view) {
+
+        View popUpView = getLayoutInflater().inflate(R.layout.infopopup,
+                null); // inflating popup layout
+        mpopup = new PopupWindow(popUpView, RelativeLayout.LayoutParams.FILL_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT, true); // Creation of popup
+        mpopup.setAnimationStyle(android.R.style.Animation_Dialog);
+        mpopup.showAtLocation(popUpView, Gravity.CENTER, 0, 0); // Displaying popup
+
+        TextView some = (TextView) popUpView.findViewById(R.id.txtclose);
+        some.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mpopup.dismiss();
+            }
+        });
+        WebView web = popUpView.findViewById(R.id.result);
+                web.loadUrl(finalText);
+    }
+
     class ZXingScannerResultHandler implements ZXingScannerView.ResultHandler
     {
 
@@ -76,11 +102,11 @@ public class main extends AppCompatActivity {
            String resultCode = result.getText().toString();
             //Toast.makeText(main.this, "http://nyeri.leja.co.ke/success.php?ref=" +resultCode, Toast.LENGTH_LONG);
             scannerView.stopCamera();
-            String finalText =" <a href='http://deus.co.ke/confirm.php?txtid_num=" +resultCode;
+            finalText =" http://deus.co.ke/confirm.php?txtid_num=" +resultCode;
            // textView2.setText("http://nyeri.leja.co.ke/success.php?ref=" +resultCode);
             String text = " <a href='http://deus.co.ke/confirm.php?txtid_num=" + resultCode +" '> View Profile</a>";
 
-            textView2.setText(Html.fromHtml(text));
+            textView2.setText("View profile");
 
         }
     }
